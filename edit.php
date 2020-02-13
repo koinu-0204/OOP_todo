@@ -1,4 +1,14 @@
 <?php
+//編集するためにDB呼び出し
+    require_once('Models/Task.php');
+    require_once('function.php');
+
+// データの受け取り
+    $id = $_GET['id'];
+    
+
+// DBへのデータ保存
+    $task = (new Task())->get($id);
 
 ?>
 <!DOCTYPE html>

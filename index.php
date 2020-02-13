@@ -74,14 +74,14 @@ $tasks = $todo->getAll();
                 <div class="card">
                     <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><?= $task['title'];?>/h5>
+                        <h5 class="card-title"><?= $task['title'];?></h5>
                         <p class="card-text">
                             <?=$task['contents'];?>
                         </p>
                         <div class="text-right d-flex justify-content-end">
-                            <a href="edit.php" class="btn text-success">EDIT</a>
+                            <a href="edit.php?id=<?= h($task['id']); ?>" class="btn text-success">EDIT</a>
                             <form action="delete.php" method="post">
-                                <input type="hidden" name="id" value="">
+                                <input type="hidden" name="id" value="<?=h($task['id']);?>">
                                 <button type="submit" class="btn text-danger">DELETE</button>
                             </form>
                         </div>
