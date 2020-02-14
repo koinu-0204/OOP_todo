@@ -7,6 +7,7 @@ class Task extends Model
     // プロパティ
     protected $table = 'tasks';
 
+
     // インスタンス化した時に呼ばれるメソッド
     public function __construct()
     {
@@ -64,13 +65,14 @@ class Task extends Model
     {
         //何を消すかどこを消すか
         $stmt = $this->db_manager->dbh->prepare
-        ('DELETE FROM' . $this->table . 'WHERE id =?');
+        ('DELETE FROM ' . $this->table . ' WHERE id =?');
         //実行
-    return $stmt->excute($date);
+
+        return $stmt->execute($date);
     }
 
     //edit.phpで使いたい $idと一致するidレコードを取得
-    public function get($id)
+        public function get($id)
     {
         $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');
     // 実行する
@@ -89,8 +91,10 @@ class Task extends Model
     {
         //この部分を更新
         // タイトル、コンテンツ、どのIDか
-        $stmt =$this->db_manager->dbh->prepare
-        ('UPDATE ' . $this->table . ' SET title = ?,contents = ? WHERE id =?');
-        $stmt->excute($date);
+        $stmt = $this->db_manager->dbh->prepare
+        ('UPDATE ' . $this->table . ' SET title = ?, contents = ? WHERE id =?');
+        $stmt->execute($date);
     }
+
+
 }

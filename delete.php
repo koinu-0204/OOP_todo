@@ -1,7 +1,7 @@
 <?php
 
 // データを取得する
-require_once('Models/task.php');
+require_once('Models/Task.php');
 
 // 取得したデータから消す
 

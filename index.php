@@ -12,6 +12,7 @@
 
 // ファイルの読み込み
 require_once('Models/Task.php');
+require_once('function.php');
 // getAllを使いたい
 // タスククラスのメソッド
 // メソッドを使う場合はクラスをインスタンス化しないといけない
